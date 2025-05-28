@@ -23,3 +23,18 @@ def contact_view(request):
 
 def team_view(request):
     return render(request, 'team.html')
+
+def portfolio_view(request):
+    return render(request,'portfolio.html')
+
+def team_details_view(request):
+    return render(request, 'team-details.html')
+
+def service_details_view(request):
+    return render(request, 'service-details.html')
+
+def blog_details_view(request):
+    return render(request,'blog-details.html')
+
+def portfolio_details_view(request):
+    return render(request,'portfolio-details.html')
