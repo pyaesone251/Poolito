@@ -12,6 +12,7 @@ def indexview(request):
     review = Review.objects.all()
     counter = Counter.objects.all().order_by('id')[:4]
     cleaning_service1 = Cleaning_service1.objects.all().order_by('id')[:5]
+    blog = Blog.objects.all().order_by('id')[:4]
     contex = {
         'hero_aera':hero_aera,
         'service1':service1,
@@ -21,7 +22,8 @@ def indexview(request):
         'review_title' :review_title,
         'review':review,
         'counter':counter,
-        'cleaning_service1':cleaning_service1
+        'cleaning_service1':cleaning_service1,
+        'blog':blog
     }
     return render(request,'index.html',contex)
 def about(request):
@@ -40,7 +42,11 @@ def blog_details(request):
     return render(request,'blog-details.html')
 
 def team(request):
-    return render(request,'team.html')
+    teamaera = Teamaera.objects.all().order_by('id')[:8]
+    contex ={
+        'teamaera':teamaera
+    }
+    return render(request,'team.html',contex)
 
 def team_details(request):
     return render(request,'team-details.html')

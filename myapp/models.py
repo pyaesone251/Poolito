@@ -1,5 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -63,3 +64,23 @@ class Cleaning_service1(models.Model):
     note = models.TextField(null=True,blank=True)
     created_at = models.TimeField(auto_now_add=True)
     updated_at = models.TimeField(auto_now_add=True)
+
+class BlogCategory(models.Model):
+    name = RichTextField(null=True,blank=True)
+    created_at = models.TimeField(auto_now_add=True)
+    updated_at = models.TimeField(auto_now_add=True)
+
+class Blog(models.Model):
+    title = RichTextField(null=True,blank=True)
+    description = RichTextField(null=True,blank=True)
+    image = models.ImageField(upload_to='blog',null=True,blank=True)
+    category = models.ManyToManyField(BlogCategory)
+    created_at = models.TimeField(auto_now_add=True)
+    updated_at = models.TimeField(auto_now_add=True)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE,null=True,blank=True)
+
+class Teamaera(models.Model):
+    image = models.ImageField(upload_to='teamaera',null=True,blank=True)
+    name = RichTextField(null=True,blank=True)
+    position = RichTextField(null=True,blank=True)
+

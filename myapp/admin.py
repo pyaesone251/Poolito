@@ -20,3 +20,7 @@ admin.site.register(Review)
 
 admin.site.register(Counter)
 
+admin.site.register(BlogCategory)
+admin.site.register(Blog)
+
+admin.site.register(Teamaera)

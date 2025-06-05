@@ -519,102 +519,36 @@
                     </div>
                 </div>
                 <div class="row align-items-center vs-carousel" data-slide-show="3" data-ml-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2" data-autoplay="true" data-arrows="true">
+                    {% for i in blog %}
                     <div class="col-xl-4 wow animate__fadeInUp" data-wow-delay="0.25s">
+                       
                         <div class="vs-blog__style1">
+                            
                             <div class="row gx-4 align-items-center">
                                 <div class="col-xl-auto">
                                     <div class="blog-img">
-                                        <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog-s-3-1.jpg' %}" alt="Blog Image"></a>
-                                        <a href="blog.html" class="blog-cate">Bedroom</a>
+                                        <a href="/blog-details/"><img src="{{ i.image.url }}" alt="Blog Image"></a>
+                                        <a href="/blog/" class="blog-cate">{{ i.title|safe }}</a>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="blog-content">
                                         <div class="blog-inner-author">
-                                            <a href="blog.html" class="blog-date"><i class="fa-regular fa-calendar-days"></i>April 27, 2024</a>
-                                            <a href="blog.html" class="blog-date"><i class="far fa-comments"></i>0 Comments</a>
+                                            <a href="/blog/" class="blog-date"><i class="fa-regular fa-calendar-days"></i>{{ i.created_at }}</a>
+                                            <a href="/blog/" class="blog-date"><i class="far fa-comments"></i>0 Comments</a>
                                         </div>
-                                        <h2 class="blog-title"><a href="blog-details.html">Get Launches Cleaning room service</a></h2>
+                                        <h2 class="blog-title"><a href="/blog-details/">{{ i.description|safe }}</a></h2>
                                         <div class="blog-btn">
-                                            <a class="link-btn" href="blog-details.html"><span class="icon"><i class="fa-solid fa-arrow-right"></i></span>Read More</a>
+                                            <a class="link-btn" href="/blog-details/"><span class="icon"><i class="fa-solid fa-arrow-right"></i></span>Read More</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
+                      
                     </div>
-                    <div class="col-xl-4 wow animate__fadeInUp" data-wow-delay="0.45s">
-                        <div class="vs-blog__style1">
-                            <div class="row gx-4 align-items-center">
-                                <div class="col-xl-auto">
-                                    <div class="blog-img">
-                                        <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog-s-3-2.jpg' %}" alt="Blog Image"></a>
-                                        <a href="blog.html" class="blog-cate">apartment</a>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="blog-content">
-                                        <div class="blog-inner-author">
-                                            <a href="blog.html" class="blog-date"><i class="fa-regular fa-calendar-days"></i>April 27, 2024</a>
-                                            <a href="blog.html" class="blog-date"><i class="far fa-comments"></i>0 Comments</a>
-                                        </div>
-                                        <h2 class="blog-title"><a href="blog-details.html">Cleaning services match your lifestyle</a></h2>
-                                        <div class="blog-btn">
-                                            <a class="link-btn" href="blog-details.html"><span class="icon"><i class="fa-solid fa-arrow-right"></i></span>Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 wow animate__fadeInUp" data-wow-delay="0.65s">
-                        <div class="vs-blog__style1">
-                            <div class="row gx-4 align-items-center">
-                                <div class="col-xl-auto">
-                                    <div class="blog-img">
-                                        <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog-s-3-3.jpg' %}" alt="Blog Image"></a>
-                                        <a href="blog.html" class="blog-cate">Bedroom</a>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="blog-content">
-                                        <div class="blog-inner-author">
-                                            <a href="blog.html" class="blog-date"><i class="fa-regular fa-calendar-days"></i>April 27, 2024</a>
-                                            <a href="blog.html" class="blog-date"><i class="far fa-comments"></i>0 Comments</a>
-                                        </div>
-                                        <h2 class="blog-title"><a href="blog-details.html">Meet Your Geaux house cleaning pro</a></h2>
-                                        <div class="blog-btn">
-                                            <a class="link-btn" href="blog-details.html"><span class="icon"><i class="fa-solid fa-arrow-right"></i></span>Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 wow animate__fadeInUp" data-wow-delay="0.85s">
-                        <div class="vs-blog__style1">
-                            <div class="row gx-4 align-items-center">
-                                <div class="col-xl-auto">
-                                    <div class="blog-img">
-                                        <a href="blog-details.html"><img src="{% static 'assets/img/blog/blog-s-3-4.jpg' %}" alt="Blog Image"></a>
-                                        <a href="blog.html" class="blog-cate">Bedroom</a>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="blog-content">
-                                        <div class="blog-inner-author">
-                                            <a href="blog.html" class="blog-date"><i class="fa-regular fa-calendar-days"></i>April 27, 2024</a>
-                                            <a href="blog.html" class="blog-date"><i class="far fa-comments"></i>0 Comments</a>
-                                        </div>
-                                        <h2 class="blog-title"><a href="blog-details.html">exclusive coupon for 10% off  cleaning</a></h2>
-                                        <div class="blog-btn">
-                                            <a class="link-btn" href="blog-details.html"><span class="icon"><i class="fa-solid fa-arrow-right"></i></span>Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                      {% endfor %}
                 </div>
             </div>
           </section>
