@@ -84,3 +84,20 @@ class Teamaera(models.Model):
     name = RichTextField(null=True,blank=True)
     position = RichTextField(null=True,blank=True)
 
+class Team_details(models.Model):
+    image = models.ImageField(upload_to='team_details',null=True,blank=True)
+    name = RichTextField(null=True,blank=True)
+    position = RichTextField(null=True,blank=True)
+    description = RichTextField(null=True,blank=True)
+    age = RichTextField(null=True,blank=True)
+    phone_num = RichTextField(null=True,blank=True)
+    email = models.EmailField(max_length=100,unique=True,null=True,blank=True)
+    address = RichTextField(null=True,blank=True)
+    experience = RichTextField(null=True,blank=True)
+    file = models.FileField(upload_to='team_details',null=True,blank=True)
+ 
+class Footer_gallery(models.Model):
+    name = models.CharField(max_length=100,null=True,blank=True)
+    image = models.ImageField(upload_to='footer_gallery',null=True,blank=True)
+    created_at = models.TimeField(auto_now_add=True)
+    updated_at = models.TimeField(auto_now_add=True)

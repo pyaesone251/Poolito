@@ -13,6 +13,8 @@ def indexview(request):
     counter = Counter.objects.all().order_by('id')[:4]
     cleaning_service1 = Cleaning_service1.objects.all().order_by('id')[:5]
     blog = Blog.objects.all().order_by('id')[:4]
+    blogcategory = BlogCategory.objects.all().order_by('id')[:2]
+    footer_gallery = Footer_gallery.objects.all().order_by('-id')[:6]
     contex = {
         'hero_aera':hero_aera,
         'service1':service1,
@@ -23,39 +25,82 @@ def indexview(request):
         'review':review,
         'counter':counter,
         'cleaning_service1':cleaning_service1,
-        'blog':blog
+        'blog':blog,
+        'blogcategory':blogcategory,
+        'footer_gallery':footer_gallery,
     }
     return render(request,'index.html',contex)
+
 def about(request):
-    return render(request,'about.html')
+    footer_gallery = Footer_gallery.objects.all().order_by('-id')[:6]
+    contex = {
+        'footer_gallery':footer_gallery,
+    }
+    return render(request,'about.html',contex)
 
 def service(request):
-    return render(request,'service.html')
+    footer_gallery = Footer_gallery.objects.all().order_by('-id')[:6]
+    contex = {
+        'footer_gallery':footer_gallery,
+    }
+    return render(request,'service.html',contex)
 
 def service_details(request):
-    return render(request,'service-details.html')
+    footer_gallery = Footer_gallery.objects.all().order_by('-id')[:6]
+    contex = {
+        'footer_gallery':footer_gallery,
+    }
+    return render(request,'service-details.html',contex)
 
 def blog(request):
-    return render(request,'blog.html')
+    footer_gallery = Footer_gallery.objects.all().order_by('-id')[:6]
+    contex = {
+        'footer_gallery':footer_gallery,
+    }
+    return render(request,'blog.html',contex)
 
 def blog_details(request):
-    return render(request,'blog-details.html')
+    footer_gallery = Footer_gallery.objects.all().order_by('-id')[:6]
+    contex = {
+        'footer_gallery':footer_gallery,
+    }
+    return render(request,'blog-details.html',contex)
 
 def team(request):
     teamaera = Teamaera.objects.all().order_by('id')[:8]
+    footer_gallery = Footer_gallery.objects.all().order_by('-id')[:6]
     contex ={
-        'teamaera':teamaera
+        'teamaera':teamaera,
+        'footer_gallery':footer_gallery,
     }
     return render(request,'team.html',contex)
 
 def team_details(request):
-    return render(request,'team-details.html')
+    team_details = Team_details.objects.all()
+    footer_gallery = Footer_gallery.objects.all().order_by('-id')[:6]
+    contex = {
+        'team_details':team_details,
+        'footer_gallery':footer_gallery,
+    }
+    return render(request,'team-details.html',contex)
 
 def contact(request):
-    return render(request,'contact.html')
+    footer_gllery = Footer_gallery.objects.all().order_by('-id')[:6]
+    contex = {
+        'footer_gallery':footer_gllery,
+    }
+    return render(request,'contact.html',contex)
 
 def portfolio(request):
-    return render(request,'portfolio.html')
+    footer_gallery = Footer_gallery.objects.all().order_by('-id')[:6]
+    contex = {
+        'footer_gallery':footer_gallery,
+    }
+    return render(request,'portfolio.html',contex)
 
 def portfolio_details(request):
-    return render(request,'portfolio-details.html')
+    footer_gallery = Footer_gallery.objects.all().order_by('-id')[:6]
+    contex = {
+        'footer_gallery':footer_gallery,
+    }
+    return render(request,'portfolio-details.html',contex)

@@ -62,10 +62,9 @@
                                 <p class="service-text">{{ i.description }}</p>
                                 <span class="shape-mockup" style="right: 0; top: 0;"><img src="{{ i.background_img.url }}" alt="service element"></span>
                                 <div class="service-bg1">
-                                    <img src="{% static 'assets/img/bg/service-bg2.jpg' %}" alt="service image">
+                                    <img src="{{ i.background_img.url }}" alt="service image">
                                 </div>
                             </div>
-                            
                         </div>
                         {% endfor %}
                     </div>
@@ -145,7 +144,7 @@
             {% for i in gallery %}
             <div class="image-gallery__col image-gallery__one wow animate__fadeInUp" data-wow-delay="0.25s">
               <img src="{{ i.photo.url }}" alt="image gallery">
-              <a href="{% static 'assets/img/gallery/gallery-img-2-1.jpg' %}" class="image-gallery__col--popup popup-image">
+              <a href="{{ i.photo.url }}" class="image-gallery__col--popup popup-image">
                 <i class="fal fa-plus"></i>
               </a>
             </div>
@@ -511,12 +510,16 @@
           <section class="vs-blog__layout1 space" data-bg-src="{% static 'assets/img/bg/blog-bg1.png' %}">
             <div class="container">
                 <div class="row justify-content-center">
+                    
                     <div class="col-lg-6">
                         <div class="title-area text-center wow animate__fadeInUp title-anime animation-style5" data-wow-delay="0.25s">
                             <span class="sec-subtitle justify-content-center title-anime__title">OUR UPDATE BLOG</span>
-                            <h2 class="sec-title title-anime__title">Updated Natest News</h2>
+                            {% for i in blogcategory %}
+                            <h2 class="sec-title title-anime__title">{{ i.name|safe}}</h2>
+                            {% endfor %}
                         </div>
                     </div>
+                    
                 </div>
                 <div class="row align-items-center vs-carousel" data-slide-show="3" data-ml-slide-show="3" data-lg-slide-show="3" data-md-slide-show="2" data-autoplay="true" data-arrows="true">
                     {% for i in blog %}

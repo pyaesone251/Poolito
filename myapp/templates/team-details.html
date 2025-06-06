@@ -30,16 +30,19 @@
         <section class="team-details space">
             <div class="container">
                 <div class="row gy-5 gx-60 align-items-center space-mobile-bottom">
+                    {% for i in team_details %}
                     <div class="col-xl-6">
                         <div class="team-img wow animate__fadeInUp animation-style2" data-wow-delay="0.25s">
-                            <img src="{% static 'assets/img/team/team-details-1-1.png' %}" alt="team-details">
+                            <img src="{{ i.image.url }}" alt="team-details">
                         </div>
                     </div>
+                    {% endfor %}
+                    {% for i in team_details %}
                     <div class="col-xl-6">
                         <div class="team-top wow animate__fadeInUp animation-style2" data-wow-delay="0.35s">
                             <div class="title-area">
-                                <h2 class="team-title">erica hanson</h2>
-                                <span class="team-degi">office cleaner</span>
+                                <h2 class="team-title">{{ i.name|safe }}</h2>
+                                <span class="team-degi">{{ i.position|safe }}</span>
                             </div>
                             <div class="social-style1">
                                 <div class="social-icon">
@@ -49,19 +52,20 @@
                                 </div>
                             </div>
                         </div>
+
                         <p class="team-text wow animate__fadeInUp animation-style2" data-wow-delay="0.45s">
-                            closed system where recircultng cleaning solution is applied (often with nozzles) cleans, 
-                            rinses and sanitises equipment. The CIP system is usually automatically cleaning sequec.
+                            {{ i.description|safe }}
                         </p>
                         <ul class="team-contact-list wow animate__fadeInUp animation-style2" data-wow-delay="0.55s">
-                            <li><sub>Age:</sub><span> 29</span></li>
-                            <li><sub>Phone Number:</sub><span> +92 7971 1145</span></li>
-                            <li><sub>Email Id:</sub><span> oliviathompson@exemple.com</span></li>
-                            <li><sub>Address:</sub><span> 1234 Oakwood Lane, IL 62704, United States</span></li>
-                            <li><sub>Experience:</sub><span> 12 Years Plus</span></li>
+                            <li><sub>Age:</sub><span> {{ i.age|safe }}</span></li>
+                            <li><sub>Phone Number:</sub><span> {{ i.phone_num|safe }}</span></li>
+                            <li><sub>Email Id:</sub><span> {{ i.email }}</span></li>
+                            <li><sub>Address:</sub><span> {{ i.address|safe }}</span></li>
+                            <li><sub>Experience:</sub><span> {{ i.experience|safe }}</span></li>
                         </ul>
-                        <a class="vs-btn2 wow animate__fadeInUp animation-style2" data-wow-delay="0.65s" href="#">download cv <i class="far fa-long-arrow-right"></i></a>
+                        <a class="vs-btn2 wow animate__fadeInUp animation-style2" data-wow-delay="0.65s" href="{{ i.file.url }}">Download Cv <i class="far fa-long-arrow-right"></i></a>
                     </div>
+                    {% endfor %}
                 </div>
                 <div class="row gy-5 gx-60">
                     <div class="col-lg-6 wow animate__fadeInUp animation-style2" data-wow-delay="0.45s">

@@ -24,3 +24,7 @@ admin.site.register(BlogCategory)
 admin.site.register(Blog)
 
 admin.site.register(Teamaera)
+
+admin.site.register(Team_details)
+
+admin.site.register(Footer_gallery)

@@ -16,8 +16,8 @@
                                     provide detailed house cleaning sanitizing services for valued clients.
                                 </p>
                                 <div class="contact-box">
-                                    <span class="icon"><img src="{% static 'assets/img/icon/call-icon.svg' {% static '%}" alt="icon"></span>
-               ' %}                     <div class="contact-content">
+                                    <span class="icon"><img src="{% static 'assets/img/icon/call-icon.svg' %}" alt="icon"></span>
+                                <div class="contact-content">
                                         
                                         <h6 class="contact-title"><a href="#">+1 999 888 666</a></h6>
                                         <p class="contact-text">call 24/7</p>
@@ -55,11 +55,13 @@
                         <div class="widget footer-widget">
                             <h3 class="widget_title">Instagram</h3>
                             <div class="sidebar-gallery">
+                                {% for i in footer_gallery %}
                                 <div class="gallery-thumb">
-                                    <img src="{% static 'assets/img/gallery/gallery-img-1-1.jpg' %}" alt="Gallery Image" class="w-100">
-                                    <a href="{% static 'assets/img/gallery/gallery-img-1-1.jpg' %}" class="popup-image gal-btn"><i class="far fa-search-plus"></i></a>
+                                    <img src="{{ i.image.url }}" alt="Gallery Image" class="w-100">
+                                    <a href="{{ i.image.url }}" class="popup-image gal-btn"><i class="far fa-search-plus"></i></a>
                                 </div>
-                                <div class="gallery-thumb">
+                               {% endfor %}
+                                <!-- <div class="gallery-thumb">
                                     <img src="{% static 'assets/img/gallery/gallery-img-1-2.jpg' %}" alt="Gallery Image" class="w-100">
                                     <a href="{% static 'assets/img/gallery/gallery-img-1-2.jpg' %}" class="popup-image gal-btn"><i class="far fa-search-plus"></i></a>
                                 </div>
@@ -78,8 +80,8 @@
                                 <div class="gallery-thumb">
                                     <img src="{% static 'assets/img/gallery/gallery-img-1-6.jpg' %}" alt="Gallery Image" class="w-100">
                                     <a href="{% static 'assets/img/gallery/gallery-img-1-6.jpg' %}" class="popup-image gal-btn"><i class="far fa-search-plus"></i></a>
-                                </div>
-                            </div>
+                                </div> -->
+                            </div>  
                         </div>
                     </div>
                 </div>
